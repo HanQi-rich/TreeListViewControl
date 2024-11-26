@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cupertino.Support", "Cupert
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppTest", "AppTest\AppTest.csproj", "{3A23426A-8F69-4F8C-93F8-B156A499F53E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF.CustomControl", "..\..\..\..\开发任务\权限管理开发\WPF.CustomControl\WPF.CustomControl\WPF.CustomControl.csproj", "{CF509FC3-CC3A-4B36-AAA4-0D8E49FB30B0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF.CustomControl", "WPF.CustomControl\WPF.CustomControl\WPF.CustomControl.csproj", "{738B2D4D-184C-487C-B4DA-CD2008FF6E21}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +29,10 @@ Global
 		{3A23426A-8F69-4F8C-93F8-B156A499F53E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3A23426A-8F69-4F8C-93F8-B156A499F53E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3A23426A-8F69-4F8C-93F8-B156A499F53E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CF509FC3-CC3A-4B36-AAA4-0D8E49FB30B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CF509FC3-CC3A-4B36-AAA4-0D8E49FB30B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CF509FC3-CC3A-4B36-AAA4-0D8E49FB30B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CF509FC3-CC3A-4B36-AAA4-0D8E49FB30B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{738B2D4D-184C-487C-B4DA-CD2008FF6E21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{738B2D4D-184C-487C-B4DA-CD2008FF6E21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{738B2D4D-184C-487C-B4DA-CD2008FF6E21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{738B2D4D-184C-487C-B4DA-CD2008FF6E21}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,9 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/WPF.CustomControl;component/Themes/Common/ChevronSwitch.xaml" />
+        <ResourceDictionary Source="/WPF.CustomControl;component/Themes/TreeListView/TreeListView.xaml" />
+        <ResourceDictionary Source="/WPF.CustomControl;component/Themes/TreeListView/TreeListViewItem.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+</ResourceDictionary>
