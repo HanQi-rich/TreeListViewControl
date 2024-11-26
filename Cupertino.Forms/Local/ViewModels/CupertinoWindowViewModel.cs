@@ -5,19 +5,69 @@ using Cupertino.Support.Local.Models;
 using Jamesnet.Wpf.Mvvm;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WPF.CustomControl.Local;
 
 namespace Cupertino.Forms.Local.ViewModels
 {
     public partial class CupertinoWindowViewModel : ObservableBase
     {
-        public List<FileItem> Files { get; set; }
+        [ObservableProperty]
+        private List<FileItem> files=[];
 
         [ObservableProperty]
         public FileItem _seletItem;
+
+        [ObservableProperty]
+        private ObservableCollection<SysDeptDto> _deptTreeList = [];
+
+        public List<SysDeptDto> deptList { get; set; } = [];
+        public void InitializeViewModel()
+        {
+            deptList.Add(new SysDeptDto { Name = "root1", ParentId = -1, Id = 1, Leader = "admin" });
+            deptList.Add(new SysDeptDto { Name = "root2", ParentId = -1, Id = 2, Leader = "admin1" });
+            deptList.Add(new SysDeptDto { Name = "children10", ParentId = 1, Id = 10, Leader = "admin" });
+            deptList.Add(new SysDeptDto { Name = "children11", ParentId = 1, Id = 11, Leader = "admin" });
+            deptList.Add(new SysDeptDto { Name = "children20", ParentId = 2, Id = 20, Leader = "admin1" });
+            deptList.Add(new SysDeptDto { Name = "children21", ParentId = 2, Id = 21, Leader = "admin1" });
+            deptList.Add(new SysDeptDto { Name = "children210", ParentId = 21, Id = 210, Leader = "admin1" });
+
+            DeptTreeList = new ObservableCollection<SysDeptDto>(BuildDepartmentTree(deptList));
+
+
+            List<SysDeptDto> BuildDepartmentTree(List<SysDeptDto> depts)
+            {
+                var returnList = new List<SysDeptDto>();
+                if (depts.Count == 0)
+                    return returnList;
+                foreach (var dept in depts.Where(dept => dept.ParentId == -1))
+                {
+                    dept.Depth = 0;
+                    RecursionFn(depts, dept);
+                    returnList.Add(dept);
+                }
+
+                return returnList;
+
+                void RecursionFn(List<SysDeptDto> list, SysDeptDto sysDeptDto, int depth = 0)
+                {
+
+                    // 得到子节点列表
+                    var childList = list.Where(p => p.ParentId == sysDeptDto.Id).ToList();
+                    childList.ForEach(t => t.Depth = depth + 1);
+                    sysDeptDto.ChildList = childList;
+
+                    foreach (var item in childList.Where(item => list.Any(p => p.ParentId == item.Id)))
+                    {
+                        RecursionFn(list, item, depth + 1);
+                    }
+                }
+            }
+        }
         public CupertinoWindowViewModel()
         {
             FileCreator fileCreator = new();
@@ -30,6 +80,8 @@ namespace Cupertino.Forms.Local.ViewModels
             GetFiles(root, source, depth);
 
             Files = source;
+
+            InitializeViewModel();
         }
 
         private void GetFiles(string root, List<FileItem> source, int depth)

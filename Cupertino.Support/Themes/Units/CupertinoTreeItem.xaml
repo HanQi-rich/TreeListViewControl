@@ -14,8 +14,12 @@
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="Auto" SharedSizeGroup="FirstColumn" />
                                     <ColumnDefinition Width="Auto" SharedSizeGroup="SecondColumn" />
-                                    <ColumnDefinition Width="Auto" MinWidth="200" SharedSizeGroup="Paths" />
-                                    <ColumnDefinition Width="Auto" MinWidth="100" SharedSizeGroup="Sizes" />
+                                    <ColumnDefinition Width="Auto"
+                                                      MinWidth="200"
+                                                      SharedSizeGroup="ThirdColumn" />
+                                    <ColumnDefinition Width="Auto"
+                                                      MinWidth="100"
+                                                      SharedSizeGroup="FourthColumn" />
                                 </Grid.ColumnDefinitions>
                                 <CheckBox x:Name="Checked" Margin="10" IsChecked="{Binding isSelected}" />
                                 <StackPanel x:Name="NameGroup" Grid.Column="1" Margin="{Binding Depth, Converter={cnvts:DepthConverter}}" Orientation="Horizontal">
@@ -41,7 +45,7 @@
                             <Setter TargetName="Item" Property="Background" Value="#004EFF" />
                             <Setter TargetName="Item" Property="TextBlock.Foreground" Value="#FFFFFF" />
                         </Trigger>
-                        <DataTrigger Binding="{Binding Type}" Value="File">
+                        <DataTrigger Binding="{Binding Children}" Value="{x:Null}">
                             <Setter TargetName="Chevron" Property="Visibility" Value="Hidden" />
                         </DataTrigger>
                     </ControlTemplate.Triggers>

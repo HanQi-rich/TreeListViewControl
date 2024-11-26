@@ -28,7 +28,6 @@ namespace Cupertino.Support.UI.Units
             DependencyProperty.Register("SelectionCommand", typeof(ICommand), typeof(CupertinoTreeItem), new PropertyMetadata(null));
 
 
-
         static CupertinoTreeItem()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(CupertinoTreeItem), new FrameworkPropertyMetadata(typeof(CupertinoTreeItem)));

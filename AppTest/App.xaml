@@ -7,7 +7,7 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="pack://application:,,,/Cupertino.Forms;component/Themes/Views/CupertinoWindow.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/WPF.CustomControl;component/Themes/Generic.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

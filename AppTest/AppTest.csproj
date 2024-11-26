@@ -5,10 +5,12 @@
     <TargetFramework>net8.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <LangVersion>12.0</LangVersion>
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\开发任务\权限管理开发\WPF.CustomControl\WPF.CustomControl\WPF.CustomControl.csproj" />
     <ProjectReference Include="..\Cupertino.Forms\Cupertino.Forms.csproj" />
     <ProjectReference Include="..\Cupertino.Support\Cupertino.Support.csproj" />
   </ItemGroup>

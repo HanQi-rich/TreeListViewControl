@@ -5,46 +5,79 @@
 
 
     <Style TargetType="{x:Type units:CupertinoTreeView}">
-        <Setter Property="Width" Value="800"/>
-        <Setter Property="BorderBrush" Value="#AAAAAA"/>
-        <Setter Property="BorderThickness" Value="1"/>
-        <Setter Property="Margin" Value="100"/>
+        <!--<Setter Property="Width" Value="800"/>-->
+        <Setter Property="BorderBrush" Value="#AAAAAA" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="Margin" Value="100" />
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type units:CupertinoTreeView}">
-                    <Border Background="{TemplateBinding Background}"
-                            BorderBrush="{TemplateBinding BorderBrush}"
-                            BorderThickness="{TemplateBinding BorderThickness}">
+                    <Border
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}">
                         <Grid Grid.IsSharedSizeScope="True">
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="*" />
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="80"
-                                                  SharedSizeGroup="FirstColumn"
-                                                  MinWidth="80" />
-                                <ColumnDefinition Width="Auto"
-                                                  MinWidth="100"
-                                                  SharedSizeGroup="SecondColumn"/>
-                                <ColumnDefinition Width="Auto" MinWidth="400" SharedSizeGroup="Paths"/>
-                                <ColumnDefinition Width="Auto" MinWidth="100" SharedSizeGroup="Sizes"/>
+                                <ColumnDefinition
+                                    Width="80"
+                                    MinWidth="80"
+                                    SharedSizeGroup="FirstColumn" />
+                                <ColumnDefinition
+                                    Width="Auto"
+                                    MinWidth="100"
+                                    SharedSizeGroup="SecondColumn" />
+                                <ColumnDefinition
+                                    Width="Auto"
+                                    MinWidth="400"
+                                    SharedSizeGroup="ThirdColumn" />
+                                <ColumnDefinition
+                                    Width="Auto"
+                                    MinWidth="100"
+                                    SharedSizeGroup="FourthColumn" />
                             </Grid.ColumnDefinitions>
-                            <Label x:Name="isSelected"
-                                   Grid.Column="0"
-                                   Content="Checked"
-                                   Background="#FAFAFA"
-                                   Padding="10"
-                                   BorderBrush="#AAAAAA"
-                                   BorderThickness="0 0 1 1" />
-                            <Label Grid.Column="1" Content="Name" Background="#FAFAFA" Padding="10" BorderBrush="#AAAAAA" BorderThickness="0 0 1 1"/>
-                            <Label Grid.Column="2" Content="Path" Background="#FAFAFA" Padding="10" BorderBrush="#AAAAAA" BorderThickness="0 0 1 1"/>
-                            <Label Grid.Column="3" Content="Size" Background="#FAFAFA" Padding="10" BorderBrush="#AAAAAA" BorderThickness="0 0 0 1"/>
-                            <units:MagicStackPanel Grid.Row="1" Grid.ColumnSpan="4" 
-                                        VerticalAlignment="Top"
-                                        ItemHeight="{Binding ElementName=Items, Path=ActualHeight}">
-                            </units:MagicStackPanel>
-                            <ItemsPresenter x:Name="Items" Grid.Row="1" Grid.ColumnSpan="4" VerticalAlignment="Top"/>
+                            <Label
+                                x:Name="isSelected"
+                                Grid.Column="0"
+                                Padding="10"
+                                Background="#FAFAFA"
+                                BorderBrush="#AAAAAA"
+                                BorderThickness="0,0,1,1"
+                                Content="Checked" />
+                            <Label
+                                Grid.Column="1"
+                                Padding="10"
+                                Background="#FAFAFA"
+                                BorderBrush="#AAAAAA"
+                                BorderThickness="0,0,1,1"
+                                Content="Name" />
+                            <Label
+                                Grid.Column="2"
+                                Padding="10"
+                                Background="#FAFAFA"
+                                BorderBrush="#AAAAAA"
+                                BorderThickness="0,0,1,1"
+                                Content="Path" />
+                            <Label
+                                Grid.Column="3"
+                                Padding="10"
+                                Background="#FAFAFA"
+                                BorderBrush="#AAAAAA"
+                                BorderThickness="0,0,0,1"
+                                Content="Size" />
+                            <units:MagicStackPanel
+                                Grid.Row="1"
+                                Grid.ColumnSpan="4"
+                                VerticalAlignment="Top"
+                                ItemHeight="{Binding ElementName=Items, Path=ActualHeight}" />
+                            <ItemsPresenter
+                                x:Name="Items"
+                                Grid.Row="1"
+                                Grid.ColumnSpan="4"
+                                VerticalAlignment="Top" />
                         </Grid>
                     </Border>
                 </ControlTemplate>

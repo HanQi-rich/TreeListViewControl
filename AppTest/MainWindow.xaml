@@ -1,18 +1,25 @@
-﻿<Window x:Class="AppTest.MainWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:ctrls="clr-namespace:Cupertino.Support.UI.Units;assembly=Cupertino.Support"
-        xmlns:views="clr-namespace:Cupertino.Forms.Local.ViewModels;assembly=Cupertino.Forms"
-        xmlns:local="clr-namespace:AppTest"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="1000"
-        d:DataContext="{d:DesignInstance Type=views:CupertinoWindowViewModel}">
+﻿<Window
+    x:Class="AppTest.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:ctrls="clr-namespace:Cupertino.Support.UI.Units;assembly=Cupertino.Support"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:AppTest"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:treeViewList="clr-namespace:WPF.CustomControl.UI.TreeListView;assembly=WPF.CustomControl"
+    xmlns:viewModel="clr-namespace:WPF.CustomControl.Local;assembly=WPF.CustomControl"
+    xmlns:views="clr-namespace:Cupertino.Forms.Local.ViewModels;assembly=Cupertino.Forms"
+    Title="MainWindow"
+    Width="1000"
+    Height="450"
+    d:DataContext="{d:DesignInstance Type=views:CupertinoWindowViewModel}"
+    mc:Ignorable="d">
     <Grid>
-        <ctrls:CupertinoTreeView Width="2000" ItemsSource="{Binding Files}">
-            
-        </ctrls:CupertinoTreeView>
-        
+        <StackPanel>
+            <ctrls:CupertinoTreeView Width="1000" ItemsSource="{Binding Files}" />
+            <treeViewList:TreeListView Width="1000" ItemsSource="{Binding DeptTreeList}" Style="{StaticResource DepartmentTreeListView}" />
+        </StackPanel>
+
+
     </Grid>
 </Window>
